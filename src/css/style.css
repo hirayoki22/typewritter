@@ -1,0 +1,219 @@
+/*** GLOBAL STYLING ***/
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400&display=swap");
+
+* {
+    color: #333;
+    font-family: Raleway, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    background: #222 url('https://images.pexels.com/photos/316902/pexels-photo-316902.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+    
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 2rem;;
+}
+
+.wrapper h1 {
+    color: #ccc;
+    font-size: 3.5rem;
+    font-weight: 200;
+    user-select: none;
+}
+
+.wrapper h1 > span {
+    color: #ccc;
+}
+
+.caret {
+    height: 100%;
+    margin-left: 6px;
+    border-right: 2px solid royalblue; 
+}
+
+@keyframes pulseEffect {
+    from, to {border-color: transparent;}
+    50% {border-color: royalblue;}
+}
+
+.wrapper h2 {
+    margin-top: 1rem;
+    color: #aaa;
+    font-size: 2rem;
+    font-weight: 200;
+    user-select: none;
+}
+
+@media(min-width: 1200px) {
+    .wrapper h1 {
+        font-size: 5rem;
+    }
+}
+
+@media(max-width: 800px) {
+    .wrapper h1 {
+        font-size: 3rem;
+    }
+}
+
+@media(max-width: 600px) {
+    .wrapper h1 {
+        font-size: 2.5rem;
+    }
+
+    .wrapper h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+.search-results {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding-bottom: 6px;
+    border-radius: 6px;
+    background-color: #fff;
+    user-select: none;
+    overflow: hidden;
+}
+
+.search-results input, li {
+    width: 100%;
+    padding: 10px 20px;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-align: left;
+}
+
+.search-results input {
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid #eee;
+    outline: none;
+}
+
+.search-results li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.highlighted {
+    color: #fff;
+    background-color: #4781ff;
+}
+
+
+
+
+
+/***Test **/
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    animation: showOverlay 0.3s forwards;
+    z-index: 100;
+}
+
+.msg-box {
+    width: 300px;
+    min-height: 130px;
+    padding: 1.2rem;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 60px rgba(0,0,0,0.7);
+    user-select: none;
+}
+
+.msg-box h3 {
+    margin: 10px 0 30px;
+    color: #222;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.msg-box p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.msg-box 
+.btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 30px auto 0;
+}
+
+.msg-box 
+.btn-wrapper button {
+    width: 85px;
+    padding: 4px 0;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.msg-box 
+.btn-wrapper button:active {
+    background-color: #555;
+}
+
+
+/* Animations*/
+@keyframes showOverlay {
+    from {visibility: hidden; opacity: 0;}
+    to {visibility: visible; opacity: 1;}
+}
+
+@keyframes hideOverlay {
+    from {visibility: visible; opacity: 1;}
+    to {visibility: hidden; opacity: 0;}
+}
+
+@keyframes zoomOut {
+    from {transform: scale(1.2, 1.2);}
+    to {transform: scale(1, 1);}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.3, 0.3);}
+    to {transform: scale(1, 1);}
+}
+
+@keyframes slideBottom {
+    from {transform: translateY(80px);}
+    to {transform: translateY(0);}
+}
+
+@keyframes slideTop {
+    from {transform: translateY(-80px);}
+    to {transform: translateY(0);}
+}
